@@ -32,7 +32,7 @@ The Travel section is paused in `src/paused/travel-pages/`. Its page layouts, co
 
 ## Publishing
 
-`astro.config.mjs` is configured for `https://iamshab.com` at the domain root. The GitHub Pages workflow in `.github/workflows/deploy.yml` currently runs **manually** from the Actions tab. Set the repository's Pages source to **GitHub Actions** and configure the custom domain in GitHub Pages before publishing.
+`astro.config.mjs` is configured for `https://iamshab.com` at the domain root. The GitHub Pages workflow in `.github/workflows/deploy.yml` runs automatically on pushes to `main`, and can also be started manually from the Actions tab. Set the repository's Pages source to **GitHub Actions** and configure the custom domain in GitHub Pages before publishing.
 
 The old WordPress posts used root-level addresses such as `/hello-world/`; the new blog uses `/blog/hello-world/`. Static redirect pages for all eight imported posts are configured in `astro.config.mjs`. GitHub Pages serves these as HTML pages with a browser redirect. A hosting platform with server-side redirects would be needed for true HTTP 301 responses.
 
