@@ -26,6 +26,7 @@ const formatDate = (e: { start: string; end: string }) =>
                 <span class="timeline-chevron" aria-hidden="true">▸</span>
               </summary>
               <div class="timeline-body">
+                {e.companyFullName && <p class="timeline-company-full">{e.companyFullName}</p>}
                 <p class="timeline-summary">{e.summary}</p>
                 <ul class="timeline-bullets">
                   {e.bullets.map((b) => <li>{b}</li>)}

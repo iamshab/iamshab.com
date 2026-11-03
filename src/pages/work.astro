@@ -1,6 +1,7 @@
 ---
 import Layout from '../components/Layout.astro';
 import Experience from '../components/Experience.astro';
+import AdvisoryProjects from '../components/AdvisoryProjects.astro';
 import Education from '../components/Education.astro';
 import Skills from '../components/Skills.astro';
 import { site, withBase } from '../data/site';
@@ -13,7 +14,7 @@ const links = Object.values(site.socials).filter((s) => s.url.startsWith('http')
 <Layout
   title="Work"
   description={current ? `${site.author.name} — ${current.role} at ${current.company}.` : `${site.author.name}'s work experience.`}
-  image="/img/og.jpg"
+  image="/og.jpg"
 >
   <section class="section">
     <div class="container">
@@ -37,6 +38,8 @@ const links = Object.values(site.socials).filter((s) => s.url.startsWith('http')
   </section>
 
   <Experience />
+
+  <AdvisoryProjects />
 
   <Education />
 

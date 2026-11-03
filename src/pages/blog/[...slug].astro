@@ -48,11 +48,11 @@ const jsonLd = {
   title={post.data.title}
   description={description}
   type="article"
-  image={post.data.coverImage ?? '/img/og.jpg'}
+  image={post.data.coverImage ?? '/og.jpg'}
   canonical={`${site.url}/blog/${post.id}/`}
   jsonLd={jsonLd}
 >
-  <article class="section">
+  <article class="section" lang="fa" dir="rtl">
     <div class="container">
       <nav aria-label="Breadcrumb" style="margin-bottom: 1.5rem;">
         <a href={withBase('/blog')}><Icon name="arrow-left" size={14} /> Back to blog</a>
@@ -60,7 +60,7 @@ const jsonLd = {
 
       <header style="max-width: 70ch;">
         <div class="post-meta">
-          <span class="category-badge {post.data.category}">{post.data.category}</span>
+          <span class:list={["category-badge", post.data.category]}>{post.data.category}</span>
           <time datetime={post.data.date.toISOString()}>{dateFmt.format(post.data.date)}</time>
           <span class="dot">·</span>
           <span>{readingTime} min read</span>

@@ -14,10 +14,10 @@ const readingTime = Math.max(1, Math.ceil((post.body?.split(/\s+/).length ?? 0) 
 const dateFmt = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 ---
 
-<article>
+<article lang="fa" dir="rtl">
   <a class="post-card" href={withBase(`/blog/${post.id}/`)}>
     <div class="post-meta">
-      <span class="category-badge {post.data.category}">{post.data.category}</span>
+      <span class:list={["category-badge", post.data.category]}>{post.data.category}</span>
       <time datetime={post.data.date.toISOString()}>{dateFmt.format(post.data.date)}</time>
       <span class="dot">·</span>
       <span>{readingTime} min read</span>

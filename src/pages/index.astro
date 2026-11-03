@@ -9,7 +9,7 @@ const personJsonLd = {
   '@type': 'Person',
   name: site.author.name,
   url: site.url,
-  image: `${site.url}${withBase('/img/og.jpg')}`,
+  image: `${site.url}${withBase('/og.jpg')}`,
   jobTitle: experience[0]?.role,
   worksFor: { '@type': 'Organization', name: experience[0]?.company },
   email: `mailto:${site.author.email}`,
@@ -20,7 +20,7 @@ const personJsonLd = {
   sameAs: [
     site.socials.github.url,
     site.socials.linkedin.url,
-    ...(site.socials.instagram ? [site.socials.instagram.url] : []),
+    ...Object.values(site.socials).filter((s) => s.url.startsWith('https://') && !['github', 'linkedin'].includes(s.icon ?? '')).map((s) => s.url),
   ],
   knowsAbout: skillGroups.flatMap((g) => g.skills).slice(0, 8),
 };

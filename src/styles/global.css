@@ -547,6 +547,12 @@ th {
   animation: timeline-fade 0.25s ease;
 }
 
+.timeline-company-full {
+  margin: 0 0 0.4rem;
+  color: var(--text-strong);
+  font-weight: 600;
+}
+
 .timeline-body > .timeline-summary {
   margin: 0 0 0.75rem;
 }
@@ -630,6 +636,15 @@ html[data-theme='dark'] .badge { color: var(--accent); }
   color: var(--muted);
   font-size: 0.92rem;
 }
+
+.advisory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+}
+
+.advisory-grid .card h3 { margin: 0 0 0.6rem; }
+.advisory-grid .card p { margin: 0; }
 
 /* ==========================================================================
    Education
@@ -805,8 +820,9 @@ html[data-theme='dark'] .badge { color: var(--accent); }
 
 .post-excerpt { color: var(--muted); margin: 0.75rem 0 0; font-size: 0.95rem; }
 
+/* Keep post tags in the content data, but hide their chips in the blog UI. */
 .tag-list {
-  display: flex;
+  display: none;
   gap: 0.4rem;
   flex-wrap: wrap;
   margin-top: 0.85rem;

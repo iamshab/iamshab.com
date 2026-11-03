@@ -1,0 +1,18 @@
+---
+import { advisoryProjects } from '../data/resume';
+---
+
+<section class="section" id="advisory-projects">
+  <div class="container">
+    <p class="eyebrow">Consulting</p>
+    <h2 class="section-heading">Advisory Projects</h2>
+    <div class="advisory-grid">
+      {advisoryProjects.map((project) => (
+        <article class="card">
+          <h3>{project.organization}</h3>
+          <p class="muted">{project.summary}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

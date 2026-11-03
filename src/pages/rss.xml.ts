@@ -19,6 +19,6 @@ export async function GET(context: APIContext) {
       link: withBase(`/blog/${post.id}/`),
       categories: post.data.tags,
     })),
-    customData: `<language>en-us</language>`,
+    customData: `<language>fa-IR</language>`,
   });
 }

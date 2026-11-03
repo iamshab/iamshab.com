@@ -1,6 +1,7 @@
 export interface Experience {
   role: string;
   company: string;
+  companyFullName?: string;
   companyUrl?: string;
   location: string;
   start: string;
@@ -11,9 +12,14 @@ export interface Experience {
   badges?: string[];
 }
 
+export interface AdvisoryProject {
+  organization: string;
+  summary: string;
+}
+
 export interface Education {
   degree: string;
-  field: string;
+  field?: string;
   school: string;
   start: string;
   end: string;
@@ -27,70 +33,137 @@ export interface SkillGroup {
 /** Work history — newest first. Shown on /work */
 export const experience: Experience[] = [
   {
-    role: 'Senior Software Engineer',
-    company: 'Example Corp',
-    companyUrl: 'https://example.com',
-    location: 'Remote',
-    start: 'Mar 2024',
+    role: 'Group Head of Cybersecurity and Infrastructure',
+    company: 'PGPIC',
+    companyFullName: 'Persian Gulf Petrochemical Industries Group',
+    companyUrl: 'https://PGPIC.ir',
+    location: 'Hybrid',
+    start: 'July 2026',
     end: 'Present',
     current: true,
-    summary: 'Replace this with a one-line summary of what you own or lead.',
+    summary: 'Lead group-wide cybersecurity and infrastructure governance for the holding company and its subsidiaries.',
     bullets: [
-      'Describe a thing you built, shipped, or led — outcomes over responsibilities.',
-      'Another bullet. Numbers help: latency cut in half, adoption up 3×, etc.',
-      'Mentoring, design reviews, on-call, whatever actually fills your week.',
+      'Lead the NOC, SOC, and infrastructure teams.',
+      'Set policies and oversee their implementation across subsidiary companies.',
     ],
-    badges: ['TypeScript', 'Go', 'Kubernetes'],
   },
   {
-    role: 'Software Engineer',
-    company: 'Startup Inc.',
-    companyUrl: 'https://example.com',
-    location: 'Portland, OR',
-    start: 'Jul 2021',
-    end: 'Feb 2024',
-    summary: 'One line about the product and your slice of it.',
+    role: 'Infrastructure Manager',
+    company: 'Daal',
+    location: 'Iran',
+    start: '2023',
+    end: 'July 2026',
+    summary: 'Led infrastructure reliability and modernization for a business-critical fintech platform.',
     bullets: [
-      'Owned X end to end — design, implementation, rollout.',
-      'Built Y used by Z customers.',
+      'Improved average internal service uptime from 99.981% to 99.993% through software-defined storage and high-availability operations.',
+      'Established cross-city disaster recovery with a 60-second RPO and a 3-minute RTO for critical services.',
+      'Led the move from standalone Docker deployments to Kubernetes and upgraded multi-site VDI resilience.',
+      'Standardized infrastructure documentation and network topology records using NetBox.',
+    ],
+    badges: ['High Availability', 'Disaster Recovery', 'Kubernetes', 'NetBox'],
+  },
+  {
+    role: 'ICT Manager',
+    company: 'SECO',
+    companyFullName: 'Sepehr Energy Petrochemical Holding',
+    location: 'Iran',
+    start: '2019',
+    end: '2023',
+    summary: 'Led ICT infrastructure and security improvements across headquarters and industrial sites.',
+    bullets: [
+      'Raised enterprise and industrial ICT service uptime from 99.71% to 99.93%.',
+      'Designed high-availability networking and deployed SD-WAN between headquarters and remote plants.',
+      'Improved critical platform load times by up to 40% through storage optimization.',
+      'Strengthened privileged access, MFA, log management, anomaly detection, and secure data ingress.',
+    ],
+    badges: ['Enterprise Networking', 'OT/IT', 'SD-WAN', 'PAM'],
+  },
+  {
+    role: 'IT Manager',
+    company: 'Iran Insurance University',
+    location: 'Iran',
+    start: '2017',
+    end: '2019',
+    summary: 'Managed infrastructure supporting nationwide virtual education and online examinations.',
+    bullets: [
+      'Designed centralized ICT services for training and remote education.',
+      'Supported high-availability examination platforms and reliable connectivity across distributed branches.',
     ],
   },
 ];
 
 /** Smaller/older roles — rendered as compact rows under the main timeline */
 export const earlierRoles: { role: string; company: string; start: string; end: string }[] = [
-  { role: 'Engineering Intern', company: 'Some Company', start: '2020', end: '2021' },
+  { role: 'System Administrator', company: 'Appkhand', start: '2016', end: '2017' },
+  { role: 'Service Desk Specialist', company: 'Jahad Nasr', start: '2015', end: '2016' },
+];
+
+/** Selected consulting work from the public resume; no dates were provided there. */
+export const advisoryProjects: AdvisoryProject[] = [
+  {
+    organization: 'Sabalan Petrochemical',
+    summary: 'Advised on industrial network reliability, IP addressing, routing, hardening, and secure OT/IT segmentation.',
+  },
+  {
+    organization: 'Siraf Petrochemical',
+    summary: 'Designed high-availability network architecture and secure zoning between operational and enterprise systems.',
+  },
+  {
+    organization: 'SITCO',
+    summary: 'Assessed infrastructure and access-control risks and strengthened security controls for oil trading operations.',
+  },
+  {
+    organization: 'Sina Insurance',
+    summary: 'Planned disaster recovery architecture and continuity improvements for critical ICT services.',
+  },
+  {
+    organization: 'Ministry of Energy of Iran',
+    summary: 'Supported infrastructure development and scaling for a national historical database and early electronic government systems.',
+  },
+  {
+    organization: 'GPSL',
+    summary: 'Designed and deployed hotel Wi-Fi mesh infrastructure to improve wireless coverage and availability.',
+  },
 ];
 
 export const education: Education[] = [
   {
-    degree: 'B.S.',
-    field: 'Computer Science',
-    school: 'State University',
-    start: '2016',
+    degree: 'M.Sc.',
+    field: 'Computer Engineering',
+    school: 'Islamic Azad University',
+    start: '2018',
     end: '2020',
+  },
+  {
+    degree: 'B.Sc.',
+    school: 'Isfahan University of Technology',
+    start: '2010',
+    end: '2014',
   },
 ];
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: 'Languages',
-    skills: ['TypeScript', 'Python', 'Go'],
+    title: 'Infrastructure & Virtualization',
+    skills: ['Kubernetes', 'Docker', 'VMware vSphere', 'Hyper-V', 'OpenStack', 'Windows Server', 'Linux', 'Software-Defined Storage'],
   },
   {
-    title: 'Platforms & Tools',
-    skills: ['React', 'PostgreSQL', 'Docker', 'AWS'],
+    title: 'Networking & Connectivity',
+    skills: ['Routing & Switching', 'SD-WAN', 'VLAN', 'VPN', 'Network Segmentation', 'IPAM'],
   },
   {
-    title: 'Interests',
-    skills: ['Distributed systems', 'Developer tooling', 'Photography'],
+    title: 'Security & Governance',
+    skills: ['ISO/IEC 27001', 'PAM', 'MFA', 'Access Control', 'Log Management', 'Hardening'],
+  },
+  {
+    title: 'Operations & Continuity',
+    skills: ['ITIL 4', 'Disaster Recovery', 'Business Continuity', 'High Availability', 'Veeam', 'Ansible', 'NetBox'],
   },
 ];
 
 /** Words typed out one character at a time in the hero */
 export const typingRoles = [
-  'software engineer',
-  'occasional photographer',
-  'weekend hiker',
-  'coffee enthusiast',
+  'Infrastructure Leader',
+  'Security & Resilience Strategist',
+  'ICT Operations Manager',
 ];

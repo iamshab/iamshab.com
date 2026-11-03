@@ -14,7 +14,7 @@ import { education } from '../data/resume';
               {e.start} – {e.end}
             </p>
             <h3>{e.degree}</h3>
-            <p style="margin: 0 0 0.2rem; font-weight: 600; color: var(--text-strong);">{e.field}</p>
+            {e.field && <p style="margin: 0 0 0.2rem; font-weight: 600; color: var(--text-strong);">{e.field}</p>}
             <p class="muted" style="margin: 0;">{e.school}</p>
           </div>
         ))

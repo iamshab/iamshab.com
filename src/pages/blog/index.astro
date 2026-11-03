@@ -12,13 +12,13 @@ const counts = new Map<string, number>();
 for (const p of allPosts) for (const t of p.data.tags) counts.set(t, (counts.get(t) ?? 0) + 1);
 ---
 
-<Layout title="Blog" description="Notes, essays, and the occasional tangent — everything I've written lately.">
-  <section class="section">
+<Layout title="نوشته‌ها" description="یادداشت‌ها و تجربه‌های شهاب آقایی دربارهٔ فناوری، زیرساخت و امنیت.">
+  <section class="section" lang="fa" dir="rtl">
     <div class="container">
       <p class="eyebrow">Blog</p>
-      <h1>Writings</h1>
+      <h1>نوشته‌ها</h1>
       <p class="muted" style="max-width: 60ch;">
-        Things I'm learning, building, or thinking about — sometimes technical, sometimes not.
+        یادداشت‌ها و تجربه‌هایم دربارهٔ فناوری، زیرساخت، امنیت و چیزهایی که در مسیر کار یاد گرفته‌ام.
       </p>
 
       {tags.length > 0 && (
