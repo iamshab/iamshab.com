@@ -277,6 +277,7 @@ th {
 }
 
 .hero-avatar {
+  filter: grayscale(1) contrast(1.05);
   width: clamp(160px, 26vw, 220px);
   height: clamp(160px, 26vw, 220px);
   border-radius: 50%;
